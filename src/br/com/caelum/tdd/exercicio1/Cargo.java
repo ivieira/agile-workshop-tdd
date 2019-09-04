@@ -1,7 +1,19 @@
 package br.com.caelum.tdd.exercicio1;
 
 public enum Cargo {
-	DESENVOLVEDOR,
-	DBA,
-	TESTER
+
+	DESENVOLVEDOR(new DezOuVintePorcento()),
+	DBA(new QuinzeOuVinteCincoPorcento()),
+	TESTER(new QuinzeOuVinteCincoPorcento());
+
+	private RegraDeCalculo regra;
+
+	Cargo(RegraDeCalculo regra) {
+		this.regra = regra;
+	}
+
+	public RegraDeCalculo getRegra() {
+		return regra;
+	}
+
 }
